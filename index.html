@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Atlas — AI-powered operations assistant for student organizations." />
+  <title>Atlas — Student Organization AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div>
+          <div class="brand-name">atlas</div>
+          <div class="brand-sub">org intelligence</div>
+        </div>
+      </div>
+
+      <div class="org-switcher" id="orgSwitcher">
+        <div class="org-avatar">SC</div>
+        <div class="org-meta">
+          <strong>Student Council</strong>
+          <span>Academic Year 2026–27</span>
+        </div>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <nav class="nav">
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-item" data-view="atlas"><span>✦</span> Talk to Atlas</button>
+        <button class="nav-item" data-view="events"><span>◫</span> Events & Projects</button>
+        <button class="nav-item" data-view="tasks"><span>✓</span> Tasks</button>
+        <button class="nav-item" data-view="budget"><span>₱</span> Budget</button>
+        <button class="nav-item" data-view="documents"><span>▤</span> Documents</button>
+
+        <p class="nav-label second">Organization</p>
+        <button class="nav-item" data-view="members"><span>♙</span> Members</button>
+        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="ai-status">
+          <span class="pulse"></span>
+          Atlas is online
+          <small>All systems operational</small>
+        </div>
+        <div class="user-card">
+          <div class="user-avatar">LM</div>
+          <div>
+            <strong>Lacy Maglalang</strong>
+            <span>Executive Secretary</span>
+          </div>
+          <span class="dots">•••</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div class="breadcrumbs"><span>Student Council</span><b>/</b><strong id="pageTitle">Dashboard</strong></div>
+        <div class="top-actions">
+          <button class="icon-btn" title="Search" id="searchBtn">⌕</button>
+          <button class="icon-btn notification" title="Notifications" id="notifBtn">♧<i></i></button>
+          <button class="avatar-btn">LM</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- DASHBOARD -->
+        <section class="view active" id="dashboard">
+          <div class="hero-row">
+            <div>
+              <div class="eyebrow">SATURDAY, SEPTEMBER 27, 2026</div>
+              <h1>Good evening, Lacy.</h1>
+              <p class="muted">Here's what needs your organization's attention today.</p>
+            </div>
+            <button class="primary-btn" id="openAtlas"><span>✦</span> Ask Atlas</button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon purple">✓</div>
+              <div><span>Open tasks</span><strong>18</strong><small class="positive">4 due today</small></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon blue">◫</div>
+              <div><span>Active projects</span><strong>6</strong><small>2 this week</small></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon green">₱</div>
+              <div><span>Budget remaining</span><strong>₱42,850</strong><small>71% allocated</small></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon orange">▤</div>
+              <div><span>Pending docs</span><strong>7</strong><small>3 need review</small></div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="panel focus-panel">
+              <div class="panel-head">
+                <div><h2>Today's focus</h2><span class="count">4</span></div>
+                <button class="text-btn" data-view-target="tasks">View all →</button>
+              </div>
+              <div class="task-list">
+                <label class="task-row">
+                  <input type="checkbox" />
+                  <span class="check-custom"></span>
+                  <span class="task-copy"><strong>Finalize General Assembly proposal</strong><small>Events · Due today</small></span>
+                  <span class="tag urgent">Urgent</span>
+                </label>
+                <label class="task-row">
+                  <input type="checkbox" />
+                  <span class="check-custom"></span>
+                  <span class="task-copy"><strong>Review committee budget requests</strong><small>Finance · Due today</small></span>
+                  <span class="tag">Finance</span>
+                </label>
+                <label class="task-row">
+                  <input type="checkbox" />
+                  <span class="check-custom"></span>
+                  <span class="task-copy"><strong>Send minutes for approval</strong><small>Secretariat · Due tomorrow</small></span>
+                  <span class="tag">Docs</span>
+                </label>
+                <label class="task-row">
+                  <input type="checkbox" />
+                  <span class="check-custom"></span>
+                  <span class="task-copy"><strong>Confirm venue availability</strong><small>Logistics · Due tomorrow</small></span>
+                  <span class="tag">Logistics</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="panel schedule-panel">
+              <div class="panel-head">
+                <div><h2>Upcoming</h2><span class="count">5</span></div>
+                <button class="text-btn" data-view-target="events">Calendar →</button>
+              </div>
+              <div class="schedule">
+                <div class="event-row"><div class="date-box"><b>29</b><span>SEP</span></div><div><strong>Executive Board Meeting</strong><small>4:00 PM · Conference Room A</small></div></div>
+                <div class="event-row"><div class="date-box"><b>02</b><span>OCT</span></div><div><strong>General Assembly</strong><small>9:00 AM · University Auditorium</small></div></div>
+                <div class="event-row"><div class="date-box"><b>07</b><span>OCT</span></div><div><strong>Freshmen Orientation</strong><small>1:00 PM · Student Center</small></div></div>
+                <div class="event-row"><div class="date-box"><b>14</b><span>OCT</span></div><div><strong>Leadership Workshop</strong><small>10:00 AM · AVR 2</small></div></div>
+              </div>
+            </div>
+
+            <div class="panel atlas-card">
+              <div class="atlas-glow"></div>
+              <div class="atlas-orb">✦</div>
+              <div>
+                <span class="eyebrow light">ATLAS INTELLIGENCE</span>
+                <h2>Your organization has momentum.</h2>
+                <p>6 projects are active. I found 4 tasks that could block this week's events.</p>
+                <button class="outline-light" id="analyzeBtn">Analyze workload</button>
+              </div>
+            </div>
+
+            <div class="panel activity-panel">
+              <div class="panel-head"><h2>Recent activity</h2><button class="text-btn">See history →</button></div>
+              <div class="activity">
+                <div class="activity-item"><div class="mini-avatar violet">JM</div><div><strong>Jordan uploaded a budget draft</strong><small>2 minutes ago · Finance</small></div></div>
+                <div class="activity-item"><div class="mini-avatar blue">AR</div><div><strong>Alex completed “Venue inquiry”</strong><small>18 minutes ago · General Assembly</small></div></div>
+                <div class="activity-item"><div class="mini-avatar green">NS</div><div><strong>Nina edited the event proposal</strong><small>42 minutes ago · Freshmen Orientation</small></div></div>
+                <div class="activity-item"><div class="mini-avatar orange">LM</div><div><strong>You approved 3 tasks</strong><small>1 hour ago · Operations</small></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ATLAS -->
+        <section class="view" id="atlas">
+          <div class="atlas-page">
+            <div class="atlas-heading">
+              <div class="large-orb">✦</div>
+              <div><div class="eyebrow">ATLAS AI</div><h1>What can I take off your plate?</h1><p class="muted">Ask naturally. Atlas can plan, draft, organize, summarize, and track.</p></div>
+            </div>
+
+            <div class="chat-shell">
+              <div class="chat-header">
+                <div><span class="online-dot"></span><strong>Atlas</strong><span>Organization assistant</span></div>
+                <button class="icon-btn" id="clearChat">↻</button>
+              </div>
+              <div class="messages" id="messages">
+                <div class="message atlas-message">
+                  <div class="msg-avatar">✦</div>
+                  <div><div class="bubble">Hi! I'm Atlas. Tell me what your organization needs and I'll help you turn it into something actionable.</div><small>Atlas · just now</small></div>
+                </div>
+                <div class="suggestion-row">
+                  <button class="suggestion">Draft an event proposal</button>
+                  <button class="suggestion">Build a meeting agenda</button>
+                  <button class="suggestion">Plan our project timeline</button>
+                  <button class="suggestion">Summarize our latest meeting</button>
+                </div>
+              </div>
+              <form class="chat-input" id="chatForm">
+                <button type="button" class="attach">＋</button>
+                <input id="chatInput" autocomplete="off" placeholder="Ask Atlas anything about your organization..." />
+                <button type="button" class="mic" id="micBtn">♩</button>
+                <button class="send" type="submit">↑</button>
+              </form>
+              <div class="chat-note">Atlas can make mistakes. Review important proposals, budgets, and official documents before submitting.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EVENTS -->
+        <section class="view" id="events">
+          <div class="page-heading"><div><div class="eyebrow">OPERATIONS</div><h1>Events & Projects</h1><p class="muted">Plan every initiative from proposal to completion.</p></div><button class="primary-btn" id="newEventBtn">＋ New project</button></div>
+          <div class="tabs"><button class="tab active">All projects <span>6</span></button><button class="tab">Upcoming <span>3</span></button><button class="tab">In progress <span>2</span></button><button class="tab">Completed <span>1</span></button></div>
+          <div class="project-grid">
+            <div class="project-card"><div class="project-top"><span class="project-icon purple">GA</span><span class="status active-status">In progress</span></div><h3>General Assembly 2026</h3><p>Annual assembly for all student organization members.</p><div class="progress"><span style="width:72%"></span></div><div class="project-meta"><span>72% complete</span><span>Oct 02</span></div><div class="project-people"><span>LM</span><span>AR</span><span>JM</span><b>+4</b></div></div>
+            <div class="project-card"><div class="project-top"><span class="project-icon blue">FO</span><span class="status planning">Planning</span></div><h3>Freshmen Orientation</h3><p>Welcome program for incoming first-year students.</p><div class="progress"><span style="width:44%"></span></div><div class="project-meta"><span>44% complete</span><span>Oct 07</span></div><div class="project-people"><span>NS</span><span>KC</span><span>LM</span><b>+6</b></div></div>
+            <div class="project-card"><div class="project-top"><span class="project-icon green">LW</span><span class="status planning">Planning</span></div><h3>Leadership Workshop</h3><p>Skills workshop for student organization officers.</p><div class="progress"><span style="width:21%"></span></div><div class="project-meta"><span>21% complete</span><span>Oct 14</span></div><div class="project-people"><span>AR</span><span>NS</span><b>+3</b></div></div>
+            <div class="project-card"><div class="project-top"><span class="project-icon orange">CC</span><span class="status active-status">In progress</span></div><h3>Campus Clean-Up</h3><p>Student-led sustainability and community initiative.</p><div class="progress"><span style="width:61%"></span></div><div class="project-meta"><span>61% complete</span><span>Oct 20</span></div><div class="project-people"><span>JM</span><span>KC</span><b>+8</b></div></div>
+            <div class="project-card"><div class="project-top"><span class="project-icon pink">SP</span><span class="status planning">Planning</span></div><h3>Student Policy Forum</h3><p>Open forum for campus policy discussions.</p><div class="progress"><span style="width:12%"></span></div><div class="project-meta"><span>12% complete</span><span>Nov 03</span></div><div class="project-people"><span>LM</span><span>NS</span><b>+5</b></div></div>
+            <div class="project-card completed-card"><div class="project-top"><span class="project-icon gray">OC</span><span class="status completed">Completed</span></div><h3>Org Connect 2026</h3><p>Inter-organization networking and recruitment fair.</p><div class="progress"><span style="width:100%"></span></div><div class="project-meta"><span>100% complete</span><span>Sep 18</span></div><div class="project-people"><span>AR</span><span>JM</span><b>+9</b></div></div>
+          </div>
+        </section>
+
+        <!-- TASKS -->
+        <section class="view" id="tasks">
+          <div class="page-heading"><div><div class="eyebrow">OPERATIONS</div><h1>Task Manager</h1><p class="muted">Keep ownership and deadlines visible.</p></div><button class="primary-btn" id="addTaskBtn">＋ Add task</button></div>
+          <div class="task-manager">
+            <div class="task-toolbar"><div class="filter-pills"><button class="filter active">All <span>18</span></button><button class="filter">My tasks <span>7</span></button><button class="filter">Due today <span>4</span></button><button class="filter">Overdue <span>2</span></button></div><select><option>Sort: Deadline</option><option>Sort: Assignee</option><option>Sort: Project</option></select></div>
+            <div class="task-table">
+              <div class="table-head"><span>Task</span><span>Project</span><span>Assignee</span><span>Deadline</span><span>Status</span></div>
+              <div class="table-row"><div class="task-title"><span class="priority high"></span><strong>Finalize General Assembly proposal</strong></div><span>General Assembly</span><span class="assignee"><i>LM</i> Lacy</span><span class="deadline danger">Today, 8:00 PM</span><span class="status-pill todo">To do</span></div>
+              <div class="table-row"><div class="task-title"><span class="priority high"></span><strong>Review committee budget requests</strong></div><span>Operations</span><span class="assignee"><i>JM</i> Jordan</span><span class="deadline danger">Today, 10:00 PM</span><span class="status-pill review">Review</span></div>
+              <div class="table-row"><div class="task-title"><span class="priority medium"></span><strong>Send minutes for approval</strong></div><span>Secretariat</span><span class="assignee"><i>NS</i> Nina</span><span class="deadline">Sep 28</span><span class="status-pill progress-pill">In progress</span></div>
+              <div class="table-row"><div class="task-title"><span class="priority medium"></span><strong>Confirm venue availability</strong></div><span>General Assembly</span><span class="assignee"><i>AR</i> Alex</span><span class="deadline">Sep 28</span><span class="status-pill todo">To do</span></div>
+              <div class="table-row"><div class="task-title"><span class="priority low"></span><strong>Prepare orientation speaker brief</strong></div><span>Freshmen Orientation</span><span class="assignee"><i>KC</i> Kai</span><span class="deadline">Sep 30</span><span class="status-pill progress-pill">In progress</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BUDGET -->
+        <section class="view" id="budget">
+          <div class="page-heading"><div><div class="eyebrow">FINANCE</div><h1>Budget Tracker</h1><p class="muted">See where your organization's money is going.</p></div><button class="primary-btn" id="expenseBtn">＋ Add expense</button></div>
+          <div class="budget-overview">
+            <div class="budget-total"><span>Available balance</span><strong>₱42,850</strong><small>of ₱150,000 annual allocation</small><div class="big-progress"><span style="width:71%"></span></div><div class="budget-foot"><span>₱107,150 allocated</span><span>28.6% remaining</span></div></div>
+            <div class="budget-mini"><span class="stat-icon purple">GA</span><div><small>General Assembly</small><strong>₱28,400</strong><span>72% of allocation</span></div></div>
+            <div class="budget-mini"><span class="stat-icon blue">FO</span><div><small>Freshmen Orientation</small><strong>₱16,750</strong><span>44% of allocation</span></div></div>
+            <div class="budget-mini"><span class="stat-icon green">OP</span><div><small>Operations</small><strong>₱9,200</strong><span>31% of allocation</span></div></div>
+          </div>
+          <div class="panel expense-panel"><div class="panel-head"><h2>Recent expenses</h2><button class="text-btn">Export CSV ↓</button></div><div class="expense-table"><div class="table-head"><span>Description</span><span>Category</span><span>Project</span><span>Date</span><span>Amount</span></div><div class="table-row"><strong>Venue reservation deposit</strong><span>Venue</span><span>General Assembly</span><span>Sep 26</span><b>₱12,000</b></div><div class="table-row"><strong>Printing & materials</strong><span>Materials</span><span>General Assembly</span><span>Sep 25</span><b>₱4,250</b></div><div class="table-row"><strong>Speaker transportation</strong><span>Logistics</span><span>Freshmen Orientation</span><span>Sep 24</span><b>₱3,800</b></div><div class="table-row"><strong>Meeting supplies</strong><span>Operations</span><span>Operations</span><span>Sep 22</span><b>₱1,450</b></div></div></div>
+        </section>
+
+        <!-- DOCUMENTS -->
+        <section class="view" id="documents">
+          <div class="page-heading"><div><div class="eyebrow">KNOWLEDGE HUB</div><h1>Documents</h1><p class="muted">One organized home for your organization's institutional memory.</p></div><button class="primary-btn" id="uploadBtn">↑ Upload document</button></div>
+          <div class="doc-grid">
+            <div class="doc-card featured-doc"><div class="doc-icon">✦</div><div><span>Atlas suggestion</span><h3>General Assembly Proposal</h3><p>Draft generated from your event details.</p></div><button class="small-btn">Open</button></div>
+            <div class="doc-card"><div class="doc-icon blue">▤</div><div><span>Meeting Minutes</span><h3>Executive Board — Sep 22</h3><p>Edited 1 hour ago · 4 pages</p></div><button class="small-btn">Open</button></div>
+            <div class="doc-card"><div class="doc-icon green">₱</div><div><span>Finance</span><h3>Q1 Budget Allocation</h3><p>Edited Sep 18 · Spreadsheet</p></div><button class="small-btn">Open</button></div>
+            <div class="doc-card"><div class="doc-icon orange">◫</div><div><span>Event Proposal</span><h3>Freshmen Orientation</h3><p>Edited Sep 16 · 6 pages</p></div><button class="small-btn">Open</button></div>
+            <div class="doc-card"><div class="doc-icon pink">▤</div><div><span>Policy</span><h3>Constitution & By-Laws</h3><p>Edited Aug 30 · 22 pages</p></div><button class="small-btn">Open</button></div>
+            <div class="doc-card"><div class="doc-icon gray">▤</div><div><span>Archive</span><h3>Previous Year Reports</h3><p>12 files · Academic Year 2025–26</p></div><button class="small-btn">Open</button></div>
+          </div>
+        </section>
+
+        <!-- MEMBERS -->
+        <section class="view" id="members">
+          <div class="page-heading"><div><div class="eyebrow">ORGANIZATION</div><h1>Members</h1><p class="muted">Manage roles, responsibilities, and access.</p></div><button class="primary-btn">＋ Invite member</button></div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar violet">LM</div><div><h3>Lacy Maglalang</h3><p>Executive Secretary</p><span>Admin · 18 tasks</span></div></div>
+            <div class="member-card"><div class="member-avatar blue">AR</div><div><h3>Alex Reyes</h3><p>Vice President</p><span>Editor · 12 tasks</span></div></div>
+            <div class="member-card"><div class="member-avatar green">JM</div><div><h3>Jordan Mendoza</h3><p>Treasurer</p><span>Finance · 9 tasks</span></div></div>
+            <div class="member-card"><div class="member-avatar orange">NS</div><div><h3>Nina Santos</h3><p>Secretary</p><span>Editor · 14 tasks</span></div></div>
+            <div class="member-card"><div class="member-avatar pink">KC</div><div><h3>Kai Cruz</h3><p>Logistics Officer</p><span>Member · 7 tasks</span></div></div>
+            <div class="member-card"><div class="member-avatar gray">+14</div><div><h3>Other members</h3><p>General members</p><span>14 active accounts</span></div></div>
+          </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="view" id="settings">
+          <div class="page-heading"><div><div class="eyebrow">ORGANIZATION</div><h1>Settings</h1><p class="muted">Configure how Atlas works for your organization.</p></div><button class="primary-btn" id="saveSettings">Save changes</button></div>
+          <div class="settings-layout">
+            <aside class="settings-nav"><button class="setting-link active">Organization</button><button class="setting-link">Atlas behavior</button><button class="setting-link">Notifications</button><button class="setting-link">Members & roles</button><button class="setting-link">Data & privacy</button></aside>
+            <div class="settings-panel">
+              <h2>Organization profile</h2><p class="muted">Basic information used in proposals and generated documents.</p>
+              <label>Organization name<input value="Student Council"></label>
+              <label>Academic year<input value="2026–2027"></label>
+              <label>Institution<input value="Your University"></label>
+              <label>Organization description<textarea>Student-led organization responsible for representing and supporting the student body.</textarea></label>
+              <hr>
+              <h2>Atlas preferences</h2>
+              <div class="toggle-row"><div><strong>Proactive reminders</strong><p>Let Atlas flag approaching deadlines and potential blockers.</p></div><button class="toggle on"></button></div>
+              <div class="toggle-row"><div><strong>Draft-first mode</strong><p>Require review before Atlas creates official documents.</p></div><button class="toggle on"></button></div>
+              <div class="toggle-row"><div><strong>Weekly operations summary</strong><p>Receive a Monday overview of tasks, projects, and budget activity.</p></div><button class="toggle"></button></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-orb">✦</div>
+      <h2 id="modalTitle">Create with Atlas</h2>
+      <p id="modalText">Tell Atlas what you need and it will prepare a first draft for you.</p>
+      <div class="modal-form" id="modalForm"></div>
+      <button class="primary-btn full" id="modalAction">Continue</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
